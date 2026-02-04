@@ -3,138 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ola Clone Enhanced</title>
+<title>Ola Clone Fancy UI</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-body { overflow-x: hidden; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; } body { overflow-x:hidden; background:#f5f5f5; } /* Header */ header { position: fixed; width: 100%; top:0; left:0; background: rgba(0,0,0,0.85); color:white; display:flex; justify-content: space-between; align-items: center; padding:15px 30px; z-index: 10; } header .logo { font-size:1.5em; font-weight:bold; cursor:pointer; } header nav ul { list-style:none; display:flex; gap:20px; } header nav ul li a { color:white; text-decoration:none; font-weight:bold; cursor:pointer; } header nav ul li a:hover { color:#FFD600; } /* Hero Section */ .hero { position: relative; width:100%; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; text-align:center; overflow:hidden; } .hero video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1; filter: brightness(0.5); transform: scale(1.1); } .hero h1 { font-size:3em; margin-bottom:15px; text-shadow:2px 2px 8px black; } .hero p { font-size:1.2em; margin-bottom:30px; text-shadow:1px 1px 5px black; } /* Hero buttons */ .hero .hero-buttons { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; } .hero .hero-buttons button { background:#FFD600; border:none; padding:12px 25px; font-size:1em; font-weight:bold; cursor:pointer; border-radius:6px; transition: all 0.3s ease; } .hero .hero-buttons button:hover { background:#ffc500; transform: translateY(-3px) scale(1.05); box-shadow:0 5px 15px rgba(0,0,0,0.3); } /* Inline form styling */ .form-inline { background: rgba(255,255,255,0.95); color: black; padding:20px; border-radius:10px; border:1px solid #ccc; display:inline-block; text-align:left; margin-top:15px; min-width:280px; box-shadow:0 8px 20px rgba(0,0,0,0.3); transition: transform 0.3s ease; } .form-inline:hover { transform: translateY(-3px) scale(1.02); } .form-inline h3 { margin-bottom:10px; color:#333; } .form-group { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; } .form-group label { width:35%; font-weight:bold; } .form-group input { width:60%; padding:6px; font-size:14px; border-radius:4px; border:1px solid #ccc; } .form-inline button { margin-top:10px; padding:8px; width:100%; font-size:14px; background:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer; transition: all 0.3s ease; } .form-inline button:hover { background:#45a049; transform: scale(1.02); } /* Services Section */ .services { padding:100px 20px; text-align:center; background:#f4f4f4; } .services h2 { margin-bottom:40px; font-size:2em; } .service-box { background:white; margin:15px; padding:20px; border-radius:10px; display:inline-block; width:250px; cursor:pointer; transition: all 0.3s ease; box-shadow:0 5px 15px rgba(0,0,0,0.1); perspective:1000px; } .service-box-inner { transition: transform 0.3s ease; transform-style: preserve-3d; padding:15px; } .service-box:hover .service-box-inner { transform: rotateY(15deg) rotateX(10deg) translateZ(10px); } .service-box h3 { margin-bottom:10px; } .service-box p { color:#555; } /* Footer */ footer { background:black; color:white; text-align:center; padding:15px; margin-top:50px; } /* Responsive */ @media(max-width:768px){ .hero h1 { font-size:2em; } .hero p { font-size:1em; } .form-inline { width:90%; margin-left:auto; margin-right:auto; } .service-box { width:80%; margin:20px auto; } } .payment-box { margin-top:15px; padding:15px; border:1px solid #ddd; border-radius:8px; background:#f9f9f9; } .payment-box button { margin:5px 5px 0 0; padding:8px 12px; border:none; background:#222; color:white; cursor:pointer; border-radius:5px; } .payment-box button:hover { background:#000; } .qr-img { margin-top:10px; width:160px; } .stats{ background:#111; color:#fff; display:flex; justify-content:space-around; padding:60px 20px; flex-wrap:wrap; } .stat{ text-align:center; margin:15px; } .stat h3{ font-size:2.5em; color:#FFD600; } .stat p{ font-size:1em; opacity:0.9; } which section i have to add this .why-us{ padding:80px 20px; background:#f9f9f9; text-align:center; } .why-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; max-width:900px; margin:auto; } .why-box{ background:white; padding:20px; border-radius:10px; font-weight:bold; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s; } .why-box:hover{ transform:translateY(-5px); } .testimonials{ background:#222; color:white; padding:80px 20px; text-align:center; } .testimonial-box{ max-width:600px; margin:20px auto; background:#333; padding:25px; border-radius:10px; box-shadow:0 5px 20px rgba(0,0,0,0.4); } .testimonial-box p{ font-style:italic; } .testimonial-box h4{ margin-top:10px; font-weight:bold; } .app-download{ background:#FFD600; color:#111; text-align:center; padding:80px 20px; } .app-download h2{ font-size:2.5em; margin-bottom:10px; } .app-download p{ font-size:1.2em; margin-bottom:25px; } .app-buttons button{ background:#111; color:#FFD600; border:none; padding:12px 25px; margin:5px; font-size:1em; border-radius:8px; cursor:pointer; transition:0.3s; } .app-buttons button:hover{ background:#000; transform:scale(1.05); } .faq{ background:#f4f4f4; padding:80px 20px; max-width:900px; margin:auto; } .faq h2{ text-align:center; margin-bottom:40px; font-size:2em; } .faq details{ background:white; margin-bottom:15px; padding:15px 20px; border-radius:8px; box-shadow:0 5px 15px rgba(0,0,0,0.1); cursor:pointer; transition:0.3s; } .faq details[open]{ background:#FFD600; color:#111; } .faq summary{ font-weight:bold; font-size:1.1em; } .faq p{ margin-top:10px; } .driver-cta{ background:#111; color:#FFD600; text-align:center; padding:80px 20px; } .driver-cta h2{ font-size:2.5em; margin-bottom:15px; } .driver-cta p{ font-size:1.2em; margin-bottom:25px; } .driver-cta button{ background:#FFD600; color:#111; border:none; padding:12px 25px; font-size:1em; border-radius:8px; cursor:pointer; transition:0.3s; } .driver-cta button:hover{ background:#ffc500; transform:scale(1.05); }
+/* Your CSS goes here (keep as-is) */
+:root {
+  --primary: #FFD600;
+  --dark: #111;
+  --light: #f5f5f5;
+  --text: #333;
+  --radius: 12px;
+}
 
-/* Header */
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.6;
+}
 header {
   position: fixed;
   width: 100%;
   top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(10px);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  z-index: 10;
+  padding: 16px 40px;
+  z-index: 100;
 }
-header .logo { font-size: 1.5em; font-weight: bold; cursor: pointer; }
-header nav ul { list-style:none; display:flex; gap:20px; }
-header nav ul li a { color:white; text-decoration:none; font-weight:bold; cursor:pointer; }
-header nav ul li a:hover { color: yellow; }
-
-/* Hero Section */
-.hero {
+header nav ul li a {
   position: relative;
-  width:100%;
-  height: 100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  text-align:center;
-  overflow:hidden;
-}
-.hero video {
-  position:absolute;
-  top:0; left:0;
-  width:100%; height:100%;
-  object-fit:cover;
-  z-index:-1;
-  filter: brightness(0.6);
-  transform: scale(1.1);
-}
-.hero h1 { font-size:3em; margin-bottom:15px; text-shadow:2px 2px 8px black; }
-.hero p { font-size:1.2em; margin-bottom:30px; text-shadow:1px 1px 5px black; }
-
-/* Hero buttons */
-.hero .hero-buttons { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
-.hero .hero-buttons button {
-  background: #FFD600;
-  border:none;
-  padding:12px 25px;
-  font-size:1em;
-  font-weight:bold;
-  cursor:pointer;
-  border-radius:6px;
-  transition: all 0.3s ease;
-}
-.hero .hero-buttons button:hover {
-  background: #ffc500;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Inline form styling */
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.4)
+  );
+  z-index: -1;
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -1px;
+}
 .form-inline {
-  background: rgba(255,255,255,0.95);
-  color: black;
-  padding:20px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  display:inline-block;
-  text-align:left;
-  margin-top:15px;
-  min-width:280px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s ease;
+  border-radius: var(--radius);
+  border: none;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
-.form-inline:hover { transform: translateY(-3px) scale(1.02); }
-.form-inline h3 { margin-bottom:10px; color:#333; }
-.form-group { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-.form-group label { width:35%; font-weight:bold; }
-.form-group input { width:60%; padding:6px; font-size:14px; border-radius:4px; border:1px solid #ccc; }
-.form-inline button {
-  margin-top:10px;
-  padding:8px;
-  width:100%;
-  font-size:14px;
-  background:#4CAF50;
-  color:white;
-  border:none;
-  border-radius:4px;
-  cursor:pointer;
-  transition: all 0.3s ease;
-}
-.form-inline button:hover { background:#45a049; transform: scale(1.02); }
-
-/* Services Section */
-.services { padding:80px 20px; text-align:center; background:#f4f4f4; }
-.services h2 { margin-bottom:40px; font-size:2em; }
-.service-box {
-  background:white;
-  margin:15px;
-  padding:20px;
-  border-radius:10px;
-  display:inline-block;
-  width:250px;
-  cursor:pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-.service-box:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+.form-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
-/* Footer */
-footer { background:black; color:white; text-align:center; padding:15px; margin-top:50px; }
-
-/* Responsive */
-@media(max-width:768px){
-  .hero h1 { font-size:2em; }
-  .hero p { font-size:1em; }
-  .form-inline { width:90%; margin-left:auto; margin-right:auto; }
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(255,214,0,0.3);
 }
+section {
+  scroll-margin-top: 90px;
+}
+.services,
+.why-us,
+.testimonials,
+.app-download,
+.driver-cta,
+.faq {
+  padding: 100px 20px;
+}
+.why-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.05em;
+}
+.why-box {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.testimonials {
+  background: linear-gradient(135deg, #111, #1c1c1c);
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.6rem;
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+}
+
+.hero button,
+.driver-cta button {
+  border-radius: 999px;
+}
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 2.6rem;        /* BIG stars */
+  color: #777;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.star:hover {
+  transform: scale(1.3);
+}
+
+.star.active {
+  color: #FFD600;
+}
+
+
+
+
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="logo" onclick="goHome()">Ola Clone</div>
   <nav>
@@ -147,8 +170,8 @@ footer { background:black; color:white; text-align:center; padding:15px; margin-
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero" id="hero">
-  <!-- Background Video -->
   <video autoplay muted loop>
     <source src="https://cdn.pixabay.com/vimeo/403107032/City%20Traffic%20Timelapse-30739.mp4?width=1280&hash=0f271d2c9e1fae86b3c9f1b7364b5c60192a60eb" type="video/mp4">
   </video>
@@ -160,151 +183,442 @@ footer { background:black; color:white; text-align:center; padding:15px; margin-
   </div>
 </section>
 
-<section class="services" id="services">
-  <h2>Our Services</h2>
-  <div class="service-box" onclick="showCityRidesForm(this)">
-    <h3>City Rides</h3>
-    <p>Quick and easy rides within the city.</p>
+<!-- STATS -->
+<section class="stats">
+  <div class="stat">
+    <h3>10M+</h3>
+    <p>Happy Riders</p>
   </div>
-  <div class="service-box" onclick="showOutstationForm(this)">
-    <h3>Outstation</h3>
-    <p>Travel long distances with comfort.</p>
+  <div class="stat">
+    <h3>250K+</h3>
+    <p>Drivers</p>
   </div>
-  <div class="service-box" onclick="showRentalsForm(this)">
-    <h3>Rentals</h3>
-    <p>Book cars by the hour for flexible travel.</p>
+  <div class="stat">
+    <h3>500+</h3>
+    <p>Cities Covered</p>
+  </div>
+  <div class="stat">
+    <h3>4.8⭐</h3>
+    <p>Average Rating</p>
   </div>
 </section>
 
+<!-- WHY US -->
+<section class="why-us">
+  <h2>Why Choose Ola Clone?</h2>
+  <div class="why-grid">
+    <div class="why-box">🛡️ 24x7 Safety Monitoring</div>
+    <div class="why-box">📍 Live GPS Tracking</div>
+    <div class="why-box">👮 Verified Drivers</div>
+    <div class="why-box">💳 Multiple Payment Options</div>
+    <div class="why-box">⚡ Instant Booking</div>
+    <div class="why-box">📞 Emergency SOS</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <h2>Our Services</h2>
+  <div class="service-box" onclick="showCityRidesForm(this)">
+    <div class="service-box-inner">
+      <h3>City Rides</h3>
+      <p>Quick and easy rides within the city.</p>
+    </div>
+  </div>
+  <div class="service-box" onclick="showOutstationForm(this)">
+    <div class="service-box-inner">
+      <h3>Outstation</h3>
+      <p>Travel long distances with comfort.</p>
+    </div>
+  </div>
+  <div class="service-box" onclick="showRentalsForm(this)">
+    <div class="service-box-inner">
+      <h3>Rentals</h3>
+      <p>Book cars by the hour for flexible travel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <h2>What Riders Say</h2>
+  <div class="testimonial-box">
+    <p>“Super smooth booking and very polite driver!”</p>
+    <h4>– Rahul, Bengaluru</h4>
+  </div>
+  <div class="testimonial-box">
+    <p>“Best prices compared to other apps.”</p>
+    <h4>– Anjali, Mumbai</h4>
+  </div>
+  <div class="testimonial-box">
+    <p>“UPI payment and QR scan worked perfectly.”</p>
+    <h4>– Karthik, Chennai</h4>
+  </div>
+</section>
+<section class="stats">
+  <div class="stat">
+    <h3>4.8 ★</h3>
+    <p>App Store Rating</p>
+  </div>
+  <div class="stat">
+    <h3>10M+</h3>
+    <p>Downloads</p>
+  </div>
+  <div class="stat">
+    <h3>1M+</h3>
+    <p>Daily Rides</p>
+  </div>
+</section>
+
+
+<!-- APP DOWNLOAD -->
+<section class="app-download">
+  <h2>Get the Ola Clone App</h2>
+  <p>Book rides faster on mobile</p>
+  <div class="app-buttons">
+    <button>📱 Google Play</button>
+    <button>🍎 App Store</button>
+  </div>
+</section>
+
+<!-- DRIVER CTA -->
+<section class="driver-cta">
+  <h2>Become a Driver</h2>
+  <p>Earn on your own schedule</p>
+  <button>Register as Driver</button>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <h2>FAQs</h2>
+  <details>
+    <summary>How do I book a ride?</summary>
+    <p>Enter pickup & drop, confirm payment and ride is booked instantly.</p>
+  </details>
+  <details>
+    <summary>Is online payment safe?</summary>
+    <p>Yes, UPI and card payments are fully secured.</p>
+  </details>
+  <details>
+    <summary>Can I cancel a ride?</summary>
+    <p>Yes, cancellation is allowed before driver arrives.</p>
+  </details>
+</section>
+<div class="testimonial-box">
+  <div class="star-rating" data-rating="5">
+    <span class="star" onclick="rate(this,1)">★</span>
+    <span class="star" onclick="rate(this,2)">★</span>
+    <span class="star" onclick="rate(this,3)">★</span>
+    <span class="star" onclick="rate(this,4)">★</span>
+    <span class="star" onclick="rate(this,5)">★</span>
+  </div>
+
+  
+</div>
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <h2>Loved by Millions ❤️</h2>
+
+  <div class="testimonial-box">
+    <div class="star-rating" data-rating="5">
+      <span class="star" onclick="rate(this,1)">★</span>
+      <span class="star" onclick="rate(this,2)">★</span>
+      <span class="star" onclick="rate(this,3)">★</span>
+      <span class="star" onclick="rate(this,4)">★</span>
+      <span class="star" onclick="rate(this,5)">★</span>
+    </div>
+    <p>“Super smooth booking and very polite driver!”</p>
+    <h4>– Rahul, Bengaluru</h4>
+  </div>
+
+  <div class="testimonial-box">
+    <div class="star-rating" data-rating="4">
+      <span class="star" onclick="rate(this,1)">★</span>
+      <span class="star" onclick="rate(this,2)">★</span>
+      <span class="star" onclick="rate(this,3)">★</span>
+      <span class="star" onclick="rate(this,4)">★</span>
+      <span class="star" onclick="rate(this,5)">★</span>
+    </div>
+    <p>“Best prices compared to other apps.”</p>
+    <h4>– Anjali, Mumbai</h4>
+  </div>
+
+  <div class="testimonial-box">
+    <div class="star-rating" data-rating="5">
+      <span class="star" onclick="rate(this,1)">★</span>
+      <span class="star" onclick="rate(this,2)">★</span>
+      <span class="star" onclick="rate(this,3)">★</span>
+      <span class="star" onclick="rate(this,4)">★</span>
+      <span class="star" onclick="rate(this,5)">★</span>
+    </div>
+    <p>“UPI payment and QR scan worked perfectly.”</p>
+    <h4>– Karthik, Chennai</h4>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+</section>
+
+<!-- FOOTER -->
 <footer>
   <p>&copy; 2026 Ola Clone. All rights reserved.</p>
 </footer>
 
 <script>
+// --- Utility Functions ---
 function clearForm() {
   document.querySelectorAll('.form-inline').forEach(f => f.remove());
 }
-function goHome(){ window.scrollTo({top:0,behavior:"smooth"}); }
 
-/* ---------- Inline Forms ---------- */
-function showBookRideForm(btn){
+function goHome() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// --- Animated Fare Function ---
+function animateValue(element, start, end, duration) {
+  let range = end - start;
+  let current = start;
+  let increment = end > start ? 1 : -1;
+  let stepTime = Math.abs(Math.floor(duration / range));
+  let obj = element;
+  let timer = setInterval(function () {
+    current += increment;
+    obj.textContent = current;
+    if (current == end) clearInterval(timer);
+  }, stepTime);
+}
+
+// --- Inline Form Functions ---
+function showBookRideForm(btn) {
   clearForm();
   const form = document.createElement('div');
-  form.className='form-inline';
-  form.innerHTML=`
+  form.className = 'form-inline';
+  form.innerHTML = `
     <h3>Book a Ride</h3>
     <div class="form-group"><label>Pickup</label><input type="text" id="pickup"></div>
     <div class="form-group"><label>Drop</label><input type="text" id="drop"></div>
     <button onclick="submitBookRide(this)">Book Ride</button>
   `;
-  btn.insertAdjacentElement('afterend',form);
-}
-function submitBookRide(btn){
-  const pickup = btn.parentNode.querySelector('#pickup').value.trim();
-  const drop = btn.parentNode.querySelector('#drop').value.trim();
-  if(!pickup||!drop){ alert('Fill both fields'); return;}
-  const fare=Math.floor(Math.random()*500+100);
-  btn.parentNode.innerHTML=`<h3>Ride Booked!</h3><p>Pickup: ${pickup}</p><p>Drop: ${drop}</p><p>Fare: ₹${fare}</p>`;
+  btn.insertAdjacentElement('afterend', form);
 }
 
-function showRentalsForm(btn){
+function submitBookRide(btn) {
+  const pickup = btn.parentNode.querySelector('#pickup').value.trim();
+  const drop = btn.parentNode.querySelector('#drop').value.trim();
+
+  if (!pickup || !drop) {
+    alert('Fill both fields');
+    return;
+  }
+
+  const fare = Math.floor(Math.random() * 500 + 100);
+  btn.parentNode.innerHTML = `
+    <h3>Ride Booked!</h3>
+    <p>Pickup: ${pickup}</p>
+    <p>Drop: ${drop}</p>
+    <p>Fare: ₹${fare}</p>
+    ${showPaymentOptions(fare)}
+  `;
+}
+
+// --- Rentals ---
+function showRentalsForm(btn) {
   clearForm();
   const form = document.createElement('div');
-  form.className='form-inline';
-  form.innerHTML=`
+  form.className = 'form-inline';
+  form.innerHTML = `
     <h3>Rentals</h3>
     <div class="form-group"><label>Name</label><input type="text" id="rentalUser"></div>
     <div class="form-group"><label>Hours</label><input type="number" id="hours"></div>
     <button onclick="submitRentals(this)">Book Rental</button>
   `;
-  btn.insertAdjacentElement('afterend',form);
-}
-function submitRentals(btn){
-  const user=btn.parentNode.querySelector('#rentalUser').value.trim();
-  const hours=btn.parentNode.querySelector('#hours').value;
-  if(!user||!hours){ alert('Fill all fields'); return;}
-  const fare = hours*300;
-  btn.parentNode.innerHTML=`<h3>Rental Booked!</h3><p>Name:${user}</p><p>Hours:${hours}</p><p>Fare: ₹${fare}</p>`;
+  btn.insertAdjacentElement('afterend', form);
 }
 
-function showCityRidesForm(btn){
+function submitRentals(btn) {
+  const user = btn.parentNode.querySelector('#rentalUser').value.trim();
+  const hours = btn.parentNode.querySelector('#hours').value;
+  if (!user || !hours) { alert('Fill all fields'); return; }
+  const fare = hours * 300;
+  btn.parentNode.innerHTML = `
+    <h3>Rental Booked!</h3>
+    <p>Name: ${user}</p>
+    <p>Hours: ${hours}</p>
+    <p>Fare: ₹<span id="fare">0</span></p>
+  `;
+  animateValue(document.getElementById('fare'), 0, fare, 1000);
+}
+
+// --- City Rides ---
+function showCityRidesForm(btn) {
   clearForm();
-  const form=document.createElement('div');
-  form.className='form-inline';
-  form.innerHTML=`
+  const form = document.createElement('div');
+  form.className = 'form-inline';
+  form.innerHTML = `
     <h3>City Ride</h3>
     <div class="form-group"><label>Pickup</label><input type="text" id="cityPickup"></div>
     <div class="form-group"><label>Drop</label><input type="text" id="cityDrop"></div>
     <button onclick="submitCityRides(this)">Book</button>
   `;
-  btn.insertAdjacentElement('afterend',form);
-}
-function submitCityRides(btn){
-  const pickup=btn.parentNode.querySelector('#cityPickup').value.trim();
-  const drop=btn.parentNode.querySelector('#cityDrop').value.trim();
-  if(!pickup||!drop){ alert('Fill all fields'); return;}
-  const fare=Math.floor(Math.random()*300+50);
-  btn.parentNode.innerHTML=`<h3>City Ride Booked!</h3><p>Pickup:${pickup}</p><p>Drop:${drop}</p><p>Fare: ₹${fare}</p>`;
+  btn.insertAdjacentElement('afterend', form);
 }
 
-function showOutstationForm(btn){
+function submitCityRides(btn) {
+  const pickup = btn.parentNode.querySelector('#cityPickup').value.trim();
+  const drop = btn.parentNode.querySelector('#cityDrop').value.trim();
+  if (!pickup || !drop) { alert('Fill all fields'); return; }
+  const fare = Math.floor(Math.random() * 300 + 50);
+  btn.parentNode.innerHTML = `
+    <h3>City Ride Booked!</h3>
+    <p>Pickup: ${pickup}</p>
+    <p>Drop: ${drop}</p>
+    <p>Fare: ₹<span id="fare">0</span></p>
+  `;
+  animateValue(document.getElementById('fare'), 0, fare, 1000);
+}
+
+// --- Outstation ---
+function showOutstationForm(btn) {
   clearForm();
-  const form=document.createElement('div');
-  form.className='form-inline';
-  form.innerHTML=`
+  const form = document.createElement('div');
+  form.className = 'form-inline';
+  form.innerHTML = `
     <h3>Outstation Booking</h3>
     <div class="form-group"><label>From</label><input type="text" id="from"></div>
     <div class="form-group"><label>To</label><input type="text" id="to"></div>
     <button onclick="submitOutstation(this)">Book</button>
   `;
-  btn.insertAdjacentElement('afterend',form);
-}
-function submitOutstation(btn){
-  const from=btn.parentNode.querySelector('#from').value.trim();
-  const to=btn.parentNode.querySelector('#to').value.trim();
-  if(!from||!to){ alert('Fill all fields'); return;}
-  const fare=Math.floor(Math.random()*2000+500);
-  btn.parentNode.innerHTML=`<h3>Outstation Booked!</h3><p>From:${from}</p><p>To:${to}</p><p>Fare: ₹${fare}</p>`;
+  btn.insertAdjacentElement('afterend', form);
 }
 
-function showCorporateForm(btn){
+function submitOutstation(btn) {
+  const from = btn.parentNode.querySelector('#from').value.trim();
+  const to = btn.parentNode.querySelector('#to').value.trim();
+  if (!from || !to) { alert('Fill all fields'); return; }
+  const fare = Math.floor(Math.random() * 2000 + 500);
+  btn.parentNode.innerHTML = `
+    <h3>Outstation Booked!</h3>
+    <p>From: ${from}</p>
+    <p>To: ${to}</p>
+    <p>Fare: ₹<span id="fare">0</span></p>
+  `;
+  animateValue(document.getElementById('fare'), 0, fare, 1000);
+}
+
+// --- Corporate ---
+function showCorporateForm(btn) {
   clearForm();
-  const form=document.createElement('div');
-  form.className='form-inline';
-  form.innerHTML=`
+  const form = document.createElement('div');
+  form.className = 'form-inline';
+  form.innerHTML = `
     <h3>Corporate Booking</h3>
     <div class="form-group"><label>Company</label><input type="text" id="company"></div>
     <div class="form-group"><label>Employee</label><input type="text" id="employee"></div>
     <button onclick="submitCorporate(this)">Submit</button>
   `;
-  btn.insertAdjacentElement('afterend',form);
-}
-function submitCorporate(btn){
-  const company=btn.parentNode.querySelector('#company').value.trim();
-  const employee=btn.parentNode.querySelector('#employee').value.trim();
-  if(!company||!employee){ alert('Fill all fields'); return;}
-  btn.parentNode.innerHTML=`<h3>Corporate Request Sent!</h3><p>Company:${company}</p><p>Employee:${employee}</p>`;
+  btn.insertAdjacentElement('afterend', form);
 }
 
-function showLoginForm(btn){
+function submitCorporate(btn) {
+  const company = btn.parentNode.querySelector('#company').value.trim();
+  const employee = btn.parentNode.querySelector('#employee').value.trim();
+  if (!company || !employee) { alert('Fill all fields'); return; }
+  btn.parentNode.innerHTML = `<h3>Corporate Request Sent!</h3><p>Company: ${company}</p><p>Employee: ${employee}</p>`;
+}
+
+// --- Login ---
+function showLoginForm(btn) {
   clearForm();
-  const form=document.createElement('div');
-  form.className='form-inline';
-  form.innerHTML=`
+  const form = document.createElement('div');
+  form.className = 'form-inline';
+  form.innerHTML = `
     <h3>Login</h3>
     <div class="form-group"><label>Username</label><input type="text" id="username"></div>
     <div class="form-group"><label>Password</label><input type="password" id="password"></div>
     <button onclick="submitLogin(this)">Submit</button>
   `;
-  btn.insertAdjacentElement('afterend',form);
+  btn.insertAdjacentElement('afterend', form);
 }
-function submitLogin(btn){
-  const username=btn.parentNode.querySelector('#username').value.trim();
-  const password=btn.parentNode.querySelector('#password').value.trim();
-  if(!username||!password){ alert('Fill all fields'); return;}
-  btn.parentNode.innerHTML=`<h3>Welcome, ${username}!</h3><p>✅ Login successful</p>`;
-}
-</script>
 
+function submitLogin(btn) {
+  const username = btn.parentNode.querySelector('#username').value.trim();
+  const password = btn.parentNode.querySelector('#password').value.trim();
+  if (!username || !password) { alert('Fill all fields'); return; }
+  btn.parentNode.innerHTML = `<h3>Welcome, ${username}!</h3><p>✅ Login successful</p>`;
+}
+
+// --- Payment Options ---
+function showPaymentOptions(amount) {
+  return `
+    <div class="payment-box">
+      <h4>Pay ₹${amount}</h4>
+      <button onclick="payCash(this)">Cash</button>
+      <button onclick="payUPI(${amount}, this)">UPI</button>
+      <button onclick="payCard(this)">Card</button>
+      <div id="paymentStatus" style="margin-top:10px;font-weight:bold;"></div>
+      <div id="upiSection"></div>
+      <div id="scanner" style="margin-top:10px;"></div>
+    </div>
+  `;
+}
+
+function payCash(btn) {
+  const box = btn.closest('.payment-box');
+  box.querySelector('#paymentStatus').innerHTML = "💵 Cash selected. Please pay driver after ride.";
+}
+
+function payCard(btn) {
+  const box = btn.closest('.payment-box');
+  box.querySelector('#paymentStatus').innerHTML = "💳 Card payment selected (Demo). Payment successful ✅";
+}
+
+function payUPI(amount, btn) {
+  const box = btn.closest('.payment-box');
+  box.querySelector('#paymentStatus').innerHTML = "📱 UPI payment selected";
+  box.querySelector('#upiSection').innerHTML = `
+    <p>Scan QR to pay ₹${amount}</p>
+    <img class="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=demo@upi&pn=OlaClone&am=${amount}">
+    <br><br>
+    <button onclick="startScanner(this)">Scan QR</button>
+  `;
+}
+
+// --- QR Scanner ---
+function startScanner(btn) {
+  const box = btn.closest('.payment-box');
+  const scannerDiv = box.querySelector('#scanner');
+  scannerDiv.innerHTML = `<div id="reader" style="width:250px"></div>`;
+  const html5QrCode = new Html5Qrcode("reader");
+  html5QrCode.start(
+    { facingMode: "environment" },
+    { fps: 10, qrbox: 200 },
+    qrCodeMessage => {
+      html5QrCode.stop();
+      scannerDiv.innerHTML = "";
+      box.querySelector('#paymentStatus').innerHTML = `✅ Payment Successful via UPI<br><small>${qrCodeMessage}</small>`;
+    },
+    errorMessage => { }
+  );
+}
+function rate(el, rating) {
+  const stars = el.parentElement.querySelectorAll('.star');
+  stars.forEach((star, index) => {
+    star.classList.toggle('active', index < rating);
+  });
+
+  el.parentElement.setAttribute('data-rating', rating);
+}
+document.querySelectorAll('.star-rating').forEach(box => {
+  const rating = box.getAttribute('data-rating');
+  if (rating) {
+    const stars = box.querySelectorAll('.star');
+    stars.forEach((star, index) => {
+      if (index < rating) star.classList.add('active');
+    });
+  }
+});
+
+</script>
 </body>
 </html>
+
