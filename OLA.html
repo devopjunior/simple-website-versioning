@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ola Clone Fancy UI</title>
@@ -110,49 +112,71 @@ section {
   from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
 .testimonials {
-  background: linear-gradient(135deg, #111, #1c1c1c);
+  background: #222;
   color: white;
-  padding: 120px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .testimonials h2 {
-  font-size: 2.6rem;
-  margin-bottom: 50px;
-  letter-spacing: -1px;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #FFD600;
 }
 
-.hero button,
-.driver-cta button {
-  border-radius: 999px;
+.testimonial-box {
+  max-width: 600px;
+  margin: 25px auto;
+  background: #333;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
+.testimonial-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
 .star-rating {
   display: flex;
   justify-content: center;
-  gap: 6px;
-  margin-bottom: 10px;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .star {
-  font-size: 2.6rem;        /* BIG stars */
+  font-size: 3rem; /* BIG stars */
   color: #777;
   cursor: pointer;
-  line-height: 1;
-  transition: transform 0.25s ease, color 0.25s ease;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .star:hover {
-  transform: scale(1.3);
+  transform: scale(1.5);
+  color: #FFD600;
 }
 
 .star.active {
   color: #FFD600;
 }
 
+.testimonial-box p {
+  font-style: italic;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
 
-
-
+.testimonial-box h4 {
+  font-weight: bold;
+  margin-top: 5px;
+  color: #FFD600;
+}
 </style>
 </head>
 <body>
@@ -355,10 +379,6 @@ section {
     <h4>– Karthik, Chennai</h4>
   </div>
 </section>
-
-<!-- TESTIMONIALS -->
-</section>
-
 <!-- FOOTER -->
 <footer>
   <p>&copy; 2026 Ola Clone. All rights reserved.</p>
@@ -617,8 +637,8 @@ document.querySelectorAll('.star-rating').forEach(box => {
     });
   }
 });
-
 </script>
+<script src="https://unpkg.com/html5-qrcode"></script>
 </body>
 </html>
 
